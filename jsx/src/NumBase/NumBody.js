@@ -17,7 +17,7 @@ export default function NumBody() {
   //필요한 state
   // 1. 초기 설명 혹은 볼과 스트라이크 홈런 알려주는 곳
   const [title, setTitle] = useState("숫자야구에 오신 것을 환영합니다");
-  // 2.입력된 값의 결과 출력 칸
+  // 2.입력된 값
   const [value, setValue] = useState("");
   // 3.정답 숫자 4개
   const [answer, setAnswer] = useState(getNumbers());
@@ -69,7 +69,7 @@ export default function NumBody() {
   return (
     <div className="App">
       <h1>{title}</h1>
-      {/* <h2>정답: {answer}</h2> */}
+      <h2>정답: {answer}</h2>
       <form onSubmit={onSubmitForm}>
         <input ref={refe} maxLength={4} value={value} onChange={onChangeInput} />
         <button>입력</button>
