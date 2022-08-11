@@ -69,7 +69,7 @@ export default function NumBody() {
   return (
     <div className="App">
       <h1>{title}</h1>
-      <h2>정답: {answer}</h2>
+      {/* <h2>정답: {answer}</h2> */}
       <form onSubmit={onSubmitForm}>
         <input ref={refe} maxLength={4} value={value} onChange={onChangeInput} />
         <button>입력</button>
