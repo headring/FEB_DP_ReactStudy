@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 
 
-export default function RPCBody() {
+export default function RPC() {
   const rspCoords = {
     바위: '0',
     가위: '-142px',
@@ -25,8 +25,8 @@ export default function RPCBody() {
   const [score, setScore] = useState(0);
   //이미지좌표??
   const [imgCoord, setImgCoord] = useState(rspCoords.바위);
-  //useRef
-  const interval = useRef();
+  //useRef null값??
+  const interval = useRef(null);
 
   //useEffect
   // useEffect(() => { //didMount, didUpdate 역할(1대 1 대응 아님)
@@ -64,7 +64,6 @@ export default function RPCBody() {
     setTimeout(() => {
       interval.current = setInterval
     })
-
   };
 
   // 렌더링 구간

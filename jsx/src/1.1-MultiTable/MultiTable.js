@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-export default function MultBody() {
+export default function MultiTable() {
   // 영상에서 나온대로 변경되어야 할 state는 총 4개: 숫자1 & 숫자2 & 입력값 & 정답확인
   const [first, setFirst] = useState(Math.ceil(Math.random() * 9));
   const [second, setSecond] = useState(Math.ceil(Math.random() * 9));

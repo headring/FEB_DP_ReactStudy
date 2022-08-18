@@ -1,9 +1,10 @@
-import NumBody from "./2-NumBase/NumBody";
 import {Routes, Route, Link } from 'react-router-dom'
-import RPCBody from "./3.2-RockPaperScissors/RPCBody";
-import LotBody from "./3.1-Lottery/LotBody";
-import MultBody from "./1.1-MultiTable/MultBody";
-import WordBody from "./1.2-WordChain/WordBody";
+import MultiTable from './1.1-MultiTable/MultiTable';
+import WordChain from './1.2-WordChain/WordChain';
+import NumBase from './2-NumBase/NumBase';
+import Lottery from './3.1-Lottery/Lottery';
+import RPC from './3.2-RPC/RPC';
+
 
 export default function App() {
   return (
@@ -11,25 +12,23 @@ export default function App() {
       <div> 
         <div>
           <Link to="/" > Main </Link>
-          <Link to="/MultiTable" element={<MultBody />}> 1.1-MultiTable </Link>
-          <Link to="/WordChain" element={<WordBody />}> 1.2-WordChain </Link>
-          <Link to="/NumBase" element={<NumBody />}> 2.NumBase </Link>
-          <Link to="/RockPaperScissors" element={<RPCBody />}> 3.1-RockPaperScissors </Link>
-          <Link to="/Lottery" element={<LotBody />}> 3.2-Lottery </Link>
+          <Link to="/MultiTable" element={<MultiTable />}> 1.1-MultiTable </Link>
+          <Link to="/WordChain" element={<WordChain />}> 1.2-WordChain </Link>
+          <Link to="/NumBase" element={<NumBase />}> 2.NumBase </Link>
+          <Link to="/RockPaperScissors" element={<RPC />}> 3.1-RockPaperScissors </Link>
+          <Link to="/Lottery" element={<Lottery />}> 3.2-Lottery </Link>
         </div>
       </div>
     
       <Routes>
         {/* <Route path="/" /> */}
-        <Route path="/MultiTable" element={<MultBody />}/>
-        <Route path="/WordChain" element={<WordBody />}/>
-        <Route path="/NumBase" element={<NumBody />}/>
-        <Route path="/RockPaperScissors" element={<RPCBody />} />
-        <Route path="/Lottery" element={<LotBody />} />
+        <Route path="/MultiTable" element={<MultiTable />}/>
+        <Route path="/WordChain" element={<WordChain />}/>
+        <Route path="/NumBase" element={<NumBase />}/>
+        <Route path="/RockPaperScissors" element={<RPC />} />
+        <Route path="/Lottery" element={<Lottery />} />
       </Routes>
     </>
-    
-    
   );
 }
 

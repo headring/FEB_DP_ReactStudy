@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-export default function WordBody() {
+export default function WordChain() {
   // 필요한 hooks 1) 시작단어 2)입력값 3)결과
 
   const generateWord = () => {

@@ -15,7 +15,7 @@ function getWinNumbers() {
   return [...winNumbers, bonusNumber];
 }
 
-export default function LotBody() {
+export default function Lottery() {
   //필요한 state
   
   //0. useMemo 복잡한 함수 결과값을 기억

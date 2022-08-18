@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import Try from "./Try";
 
-export default function NumBody() {
+export default function NumBase() {
   function getNumbers() {
     // 숫자 4개를 겹치지 않는 함수 생성
     let result = "";
