@@ -31,7 +31,7 @@ export default function LotBody() {
   //5. useRef -> 일반 값을 기억
   const timeouts = useRef([]);
 
-  //useEffect
+  //useEffect 필요에 따라서 여러번 사용 가능
   useEffect(() => {
     console.log('useEffect')
     for(let i = 0; i < winNumbers.length - 1; i++){
