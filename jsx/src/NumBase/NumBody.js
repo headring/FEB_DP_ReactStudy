@@ -20,7 +20,7 @@ export default function NumBody() {
   // 2.입력된 값
   const [value, setValue] = useState("");
   // 3.정답 숫자 4개
-  const [answer, setAnswer] = useState(getNumbers());
+  const [answer, setAnswer] = useState(getNumbers); // 함수 정의 시에만 lazy init getNumbers()를 쓰면 재랜더링 될 때마다 재호출되기에 함수의 리턴값만 초기 할당
   // 4.몇번 시도 했는지
   const [tries, setTries] = useState([]);
   // focus유지
@@ -33,14 +33,14 @@ export default function NumBody() {
       if (value === answer) {
         setTitle(`홈런 정답은 ${answer} , 그리고 다시 시작`);
         setTries([]);
-        setAnswer(getNumbers);
+        setAnswer(getNumbers); // 원래는 getNumbers() 호출에서 넣는 것
         setValue('')
         refe.current.focus();
       } else { 
         //볼과 strike 카운트
         let strike = 0;
         let ball = 0;
-        let out = 0;
+        // let out = 0;
         for (let i = 0; i < value.length; i++) {
           if (value[i] === answer[i]) {
             strike++;
