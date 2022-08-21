@@ -1,5 +1,10 @@
 import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import Ball from "./Ball";
+import styled from 'styled-components';
+
+const Button = styled.button`
+  background: beige;
+`
 
 // 로또 당첨 숫자(셔플????)
 function getWinNumbers() {
@@ -70,7 +75,7 @@ export default function Lottery() {
       </div>
       <div>보너스</div>
       {bonus && <Ball number={bonus} />}
-      <button onClick={onClickRedo} >한번 더?</button>
+      <Button onClick={onClickRedo} >한번 더?</Button>
     </div>
   )
 }
