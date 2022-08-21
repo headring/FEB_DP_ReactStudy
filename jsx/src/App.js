@@ -11,12 +11,14 @@ export default function App() {
     <>
       <div> 
         <div>
-          <Link to="/" > Main </Link>
-          <Link to="/MultiTable" element={<MultiTable />}> 1.1-MultiTable </Link>
-          <Link to="/WordChain" element={<WordChain />}> 1.2-WordChain </Link>
-          <Link to="/NumBase" element={<NumBase />}> 2.NumBase </Link>
-          <Link to="/RockPaperScissors" element={<RPC />}> 3.1-RockPaperScissors </Link>
-          <Link to="/Lottery" element={<Lottery />}> 3.2-Lottery </Link>
+          <ul>
+            <li><Link to="/" > Main </Link></li>
+            <li><Link to="/MultiTable" element={<MultiTable />}> 1.1-MultiTable </Link></li>
+            <li><Link to="/WordChain" element={<WordChain />}> 1.2-WordChain </Link></li>
+            <li><Link to="/NumBase" element={<NumBase />}> 2.NumBase </Link></li>
+            <li><Link to="/RockPaperScissors" element={<RPC />}> 3.1-RockPaperScissors </Link></li>
+            <li><Link to="/Lottery" element={<Lottery />}> 3.2-Lottery </Link></li>
+          </ul>
         </div>
       </div>
     
