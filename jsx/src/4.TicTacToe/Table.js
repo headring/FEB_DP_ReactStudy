@@ -1,8 +1,13 @@
+import React from "react";
 import Tr from "./Tr"
 
-export default Table = () => {
+const Table = ({ onClick, tableData }) => {
   return (
-    <Tr>{''}</Tr>
+    <table onClick={onClick}>
+      {/* table data의 첫 레벨 길이(3)만큼 Tr로 만듧 */}
+      {Array(tableData.length).fill().map((tr, i) => (<Tr rowData={tableData[i]} />))}
+    </table>
   )
+};
 
-}
+export default Table

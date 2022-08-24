@@ -1,31 +1,49 @@
-import { useReducer, userState } from 'react';
+import { useCallback, useReducer, userState, useState } from 'react';
 import Table from './Table';
 
-const initialState = {
+const initalState = {
   winner: '',
-  turn: 0,
-  tableData: [['', '', ''], ['', '', ''], ['', '', '']]
+  turn: 'O',
+  tableData: [['', '', ''], ['', '', ''], ['', '', '']],
+
 };
 
+// action을 따로 상수로 빼놓는 것이 좋다???? 커뮤니티 규칙
+let SET_WINNER = 'SET_WINNER';
+
+// 이 reducer안에서 state를 어떻게 바꿀지 적어줌
 const reducer = (state, action) => {
+  switch (action.type) {
+    case SET_WINNER: // action을 구별하고
+      return { // 기존 inital state를 바꾸지 않고 새로운 객체를 만들어서 바뀐 값을 업데이트
+        // state.winner = action.winner 이러면 안 됨
+        ...state,
+        winner: action.winner,
+      }
+  }
+}
 
-} ;
-
-export default TicTacToe = () => {
-  const [state, dispatch] = useReducer(reducer, initialState)
-
-  // 필요 state
-  // const [winner, setWinner] = userState('');
-  // const [turn, setTurn] = userState(0);
-  // const [tableData, setTableData] = userState([['', '', ''], ['', '', ''], ['', '', '']])
+export default function TicTacToe() {
+  // useReduce로 state 관리, 하나의 setState로 넘기기
+  const [state, dispatch] = useReducer(reducer, initalState);
 
 
+  // const [winner, setWinner] = useState('');
+  // const [turn, setTurn] = useState(0);
+  // const [tableData, setTableDate] = useState( [['', '', ''], ['', '', ''], ['', '', '']] );
+
+  // 컴포넌트에 넣는 모든 함수는 useCallback
+  const onClickTable = useCallback(() => {
+    //클릭히면 O이 들어가는 것
+    // 액션 -> dispatch
+    dispatch({ type: SET_WINNER, winner: 'O' }) // 액션 객체를 실행(dispatch)한다 -> 이 액션을 파악하고 state를 바꿔주는 것이 reducer
+  }, []);
 
   return(
     <>
-      <Table />
-      {winner & <div>{winner}님의 숭리</div>}
-    
+      <Table onClick={onClickTable} tableData={state.tableData}/>
+      {state.winner && <div>{state.winner}님의 승리</div>}
     </>
+
   )
 }

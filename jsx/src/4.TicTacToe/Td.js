@@ -1,7 +1,9 @@
+import React from "react";
 
-export default Td = () => {
+const Td = () => {
   return (
     <td>{''}</td>
   )
+};
 
-}
+export default Td

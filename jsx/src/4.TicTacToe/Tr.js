@@ -1,8 +1,16 @@
+import React from "react";
 import Td from "./Td"
+import styled from "styled-components";
 
-export default Tr = () => {
+
+
+const Tr = ({ rowData }) => {
   return (
-    <Td>{''}</Td>
+    <tr>
+      {/* tableData의 레벨2의 배열길이만큼 만들어내는 것 */}
+      {Array(rowData.length).fill().map((td) => (<Td>{''}</Td>) )}
+    </tr>
   )
+};
 
-}
+export default Tr;
