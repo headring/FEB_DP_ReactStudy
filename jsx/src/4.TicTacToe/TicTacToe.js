@@ -1,4 +1,4 @@
-import { useCallback, useReducer, userState, useState } from 'react';
+import { useCallback, useReducer} from 'react';
 import Table from './Table';
 
 const initalState = {
@@ -9,17 +9,34 @@ const initalState = {
 };
 
 // action을 따로 상수로 빼놓는 것이 좋다???? 커뮤니티 규칙
-let SET_WINNER = 'SET_WINNER';
+export const SET_WINNER = 'SET_WINNER';
+export const CLICK_CELL = 'CLICK_CELL';
+export const SET_TURN = 'SET_TURN';
 
 // 이 reducer안에서 state를 어떻게 바꿀지 적어줌
 const reducer = (state, action) => {
   switch (action.type) {
+
     case SET_WINNER: // action을 구별하고
       return { // 기존 inital state를 바꾸지 않고 새로운 객체를 만들어서 바뀐 값을 업데이트
         // state.winner = action.winner 이러면 안 됨
         ...state,
         winner: action.winner,
-      }
+      };
+
+    case CLICK_CELL: 
+      const tableData = [...state.tableData];
+      tableData[action.row] = [...tableData[action.row]]; //immer라는 라이브러리로 가독성 해결
+      tableData[action.row][action.cell] = state.turn;
+      return {
+        ...state,
+      };
+
+    case SET_TURN:
+      return {
+        ...state,
+        turn: state.turn === 'O' ? 'X' : 'O',
+      };
   }
 }
 
@@ -41,7 +58,7 @@ export default function TicTacToe() {
 
   return(
     <>
-      <Table onClick={onClickTable} tableData={state.tableData}/>
+      <Table onClick={onClickTable} tableData={state.tableData} dispatch={dispatch}/>
       {state.winner && <div>{state.winner}님의 승리</div>}
     </>
 
