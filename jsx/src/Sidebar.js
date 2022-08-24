@@ -26,6 +26,9 @@ export default function Sidebar() {
       <div>
         <Link to="/Lottery"> 3.2-Lottery </Link>
       </div>
+      <div>
+      <Link to="/TicTacToe"> 4.TicTacToe </Link>
+      </div>
     </Styling>
   )
 }
