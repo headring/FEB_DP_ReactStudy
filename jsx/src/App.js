@@ -6,6 +6,7 @@ import Lottery from './3.1-Lottery/Lottery';
 import RPC from './3.2-RPC/RPC';
 import Sidebar from './Sidebar';
 import styled from 'styled-components';
+import TicTacToe from './4.TicTacToe/TicTacToe';
 
 const Global = styled.div`
   display: flex;
@@ -36,6 +37,7 @@ export default function App() {
           <Route path="/NumBase" element={<NumBase />}/>
           <Route path="/RockPaperScissors" element={<RPC />} />
           <Route path="/Lottery" element={<Lottery />} />
+          <Route path="/TicTacToe" element={<TicTacToe />} />
         </Routes>
       </Gamepages>
     </Global>
