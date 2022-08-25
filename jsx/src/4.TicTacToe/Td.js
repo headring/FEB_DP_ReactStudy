@@ -13,9 +13,9 @@ const Td = ({ rowIndex, cellIndex, dispatch, cellData }) => {
     if (cellData) {
       return;
     }
-    // cell을 클릭하면 이게 몇번재 칸인지 알려주는 action
+    // cell을 클릭하면 이게 몇번재 칸인지 알려주는 action, 비동기 state일 때는 useEffect
     dispatch({ type: CLICK_CELL, row: rowIndex, cell: cellIndex });
-    dispatch({ type: CHANGE_TURN });
+    
   }, [cellData]);
 
   return (
