@@ -11,7 +11,7 @@ const initalState = {
 // action을 따로 상수로 빼놓는 것이 좋다???? 커뮤니티 규칙
 export const SET_WINNER = 'SET_WINNER';
 export const CLICK_CELL = 'CLICK_CELL';
-export const SET_TURN = 'SET_TURN';
+export const CHANGE_TURN = 'CHANGE_TURN';
 
 // 이 reducer안에서 state를 어떻게 바꿀지 적어줌
 const reducer = (state, action) => {
@@ -32,7 +32,7 @@ const reducer = (state, action) => {
         ...state,
       };
 
-    case SET_TURN:
+    case CHANGE_TURN:
       return {
         ...state,
         turn: state.turn === 'O' ? 'X' : 'O',
