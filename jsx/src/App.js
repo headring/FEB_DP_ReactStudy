@@ -7,6 +7,7 @@ import RPC from './3.2-RPC/RPC';
 import Sidebar from './Sidebar';
 import styled from 'styled-components';
 import TicTacToe from './4.TicTacToe/TicTacToe';
+import MarkPage from './5.MarkPage/MarkPage';
 
 const Global = styled.div`
   display: flex;
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/RockPaperScissors" element={<RPC />} />
           <Route path="/Lottery" element={<Lottery />} />
           <Route path="/TicTacToe" element={<TicTacToe />} />
+          <Route path="/MarkPage" element={<MarkPage />} />
         </Routes>
       </Gamepages>
     </Global>

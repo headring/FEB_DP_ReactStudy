@@ -29,6 +29,9 @@ export default function Sidebar() {
       <div>
       <Link to="/TicTacToe"> 4.TicTacToe </Link>
       </div>
+      <div>
+      <Link to="/MarkPage"> 4.MarkPage </Link>
+      </div>
     </Styling>
   )
 }
