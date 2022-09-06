@@ -5,6 +5,8 @@ import MDEditor from "@uiw/react-md-editor";
 const mkdStr = `
 # Markdown Editor
 
+[Source](https://www.npmjs.com/package/@uiw/react-md-editor)
+hi
 ---
 
 **Hello world!!!**
