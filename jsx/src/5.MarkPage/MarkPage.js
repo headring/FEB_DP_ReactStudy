@@ -26,10 +26,10 @@ function MarkPage() {
   return (
     <div className="container">
       <h3>Auto</h3>
-      <MDEditor height={200} value={value} onChange={setValue} />
+      <MDEditor height={400} value={value} onChange={setValue} />
       <div data-color-mode="light">
         <h3>Light</h3>
-        <MDEditor height={200} value={value} onChange={setValue} />
+        <MDEditor height={972} value={value} onChange={setValue} />
       </div>
       <h3>Auto MDEditor.Markdown</h3>
       <MDEditor.Markdown
