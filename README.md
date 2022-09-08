@@ -1,3 +1,6 @@
+(2022.09.09)
+- vanilaGatsby-TS 생성
+  - TS, styled-components, automatic sitemap, markdown and MDX support 
 (2022.08.21)
 - CodeSandbox에서 로컬 개발환경으로 이동완료
 ***
