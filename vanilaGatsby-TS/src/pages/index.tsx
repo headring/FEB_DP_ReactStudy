@@ -138,17 +138,27 @@ const links = [
   },
 ]
 
+ type Editor = {
+    value: string;
+    setValue: string;
+    onChange: (val: string) => void;
+  }
+
 const IndexPage = () => {
-  const [value, setValue] = React.useState("**Hello world!!!**");
+ 
+  const [value, setValue] = useState<string>("**Hello world!!!**");
+  function withEvent(func: Function): React.ChangeEventHandler<any> {
+    return (event: React.ChangeEvent<any>) => {
+      const { target } = event;
+      func(target.value);
+    };
+  }
   return (
     <>
       <div className="container">
-        <MDEditor
-          value={value}
-          onChange={setValue}  // 이거 뭐지??
-        />
+        <MDEditor value={value} onChange={setValue} />
         <MDEditor.Markdown source={value} style={{ whiteSpace: 'pre-wrap' }} />
-    </div>
+      </div>
       <main style={pageStyles}>
         <h1 style={headingStyles}>
           Congratulations
