@@ -155,10 +155,10 @@ const IndexPage = () => {
   }
   return (
     <>
-      <div className="container">
+      {/* <div className="container">
         <MDEditor value={value} onChange={setValue} />
         <MDEditor.Markdown source={value} style={{ whiteSpace: 'pre-wrap' }} />
-      </div>
+      </div> */}
       <main style={pageStyles}>
         <h1 style={headingStyles}>
           Congratulations
