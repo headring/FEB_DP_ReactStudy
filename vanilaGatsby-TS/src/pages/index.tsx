@@ -1,5 +1,6 @@
 import * as React from "react"
 import { useState } from "react";
+import { Link } from "gatsby";
 import type { HeadFC } from "gatsby"
 import MDEditor from '@uiw/react-md-editor';
 
@@ -159,6 +160,7 @@ const IndexPage = () => {
         <MDEditor value={value} onChange={setValue} />
         <MDEditor.Markdown source={value} style={{ whiteSpace: 'pre-wrap' }} />
       </div> */}
+      <Link to="/about">Go to About</Link>
       <main style={pageStyles}>
         <h1 style={headingStyles}>
           Congratulations
