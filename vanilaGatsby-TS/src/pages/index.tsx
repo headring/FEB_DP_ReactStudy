@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Link } from "gatsby";
 import type { HeadFC } from "gatsby"
 import MDEditor from '@uiw/react-md-editor';
-import Layout from '../components/layout'
+import Layout from '../components/layout' //type ???
+import { StaticImage } from 'gatsby-plugin-image'
 
 
 const pageStyles = {
@@ -162,8 +163,12 @@ const IndexPage = () => {
         <MDEditor value={value} onChange={setValue} />
         <MDEditor.Markdown source={value} style={{ whiteSpace: 'pre-wrap' }} />
       </div> */}
-      <Layout pageTitle="Home Page" children="crossing">
+      <Layout pageTitle="Home Page">
         <p>I'm making this by following the Gatsby Tutorial.</p>
+        <StaticImage
+          alt="Clifford, a reddish-brown pitbull, posing on a couch and looking stoically at the camera"
+          src="https://pbs.twimg.com/media/E1oMV3QVgAIr1NT?format=jpg&name=large"
+        />
       </Layout>
       <main style={pageStyles}>
         <h1 style={headingStyles}>
