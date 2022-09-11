@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Link } from "gatsby";
 import type { HeadFC } from "gatsby"
 import MDEditor from '@uiw/react-md-editor';
+import Layout from '../components/layout'
+
 
 const pageStyles = {
   color: "#232129",
@@ -160,7 +162,9 @@ const IndexPage = () => {
         <MDEditor value={value} onChange={setValue} />
         <MDEditor.Markdown source={value} style={{ whiteSpace: 'pre-wrap' }} />
       </div> */}
-      <Link to="/about">Go to About</Link>
+      <Layout pageTitle="Home Page" children="crossing">
+        <p>I'm making this by following the Gatsby Tutorial.</p>
+      </Layout>
       <main style={pageStyles}>
         <h1 style={headingStyles}>
           Congratulations
