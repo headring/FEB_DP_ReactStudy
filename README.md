@@ -1,3 +1,6 @@
+(2022.09.11)
+- plugin-image 설치할 때 v.16.15.0에서 설치한 것임 -> 이 상태 유지하면서 npm run start하면 에러뜸
+***
 (2022.09.10)
 - vanilaGatsby-TS에 react-query 설치
   - TS, styled-components, automatic sitemap, markdown and MDX support, "react-query"
