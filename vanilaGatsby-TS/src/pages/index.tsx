@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "gatsby";
 import type { HeadFC } from "gatsby"
 import MDEditor from '@uiw/react-md-editor';
-import Layout from '../components/layout' //type ???
+import Layout from '../components/layout' //type ??? 지정 안해줘서 그런 것 같은데???
 import { StaticImage } from 'gatsby-plugin-image'
 
 
