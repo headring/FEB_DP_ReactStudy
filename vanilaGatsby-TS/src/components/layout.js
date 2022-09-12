@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 const Main = styled.main`
@@ -9,8 +9,19 @@ const Main = styled.main`
 `
 
 const Layout = ({ pageTitle, children }) => {
+  const data = useStaticQuery(graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`)
+
   return (
     <div>
+      <header>{data.site.siteMetadata.title}</header>
       <nav>
         <ul>
           <li><Link to="/">Home</Link></li>
